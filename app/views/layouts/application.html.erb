@@ -9,10 +9,11 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %> 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
+  <%= render 'shared/navbar' %>
+  <div class="container">
+  <%= render 'layouts/messages' %>
   <%= yield %>
+  <%= render 'layouts/footer' %>
+  </div>
   </body>
 </html>
