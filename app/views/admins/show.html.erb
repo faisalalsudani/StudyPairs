@@ -1,7 +1,5 @@
-<% if current_student.admin? %>
-  <ul>
-    <% @students.each do |student| %>
-      <li><%= student.email %> - Admin: <%= student.admin %> </li>
-    <% end %>
-  </ul>
-<% end %>
+<ul>
+  <% @students.each do |student| %>
+    <li><%= student.email %> - Admin: <%= student.admin %> </li>
+  <% end %>
+</ul>
