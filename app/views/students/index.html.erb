@@ -1,0 +1,7 @@
+<% if student_signed_in? %>
+<ul>
+  <% @students.each do |s| %>
+    <li><%= s.email %></li>
+  <% end %>
+</ul>
+<% end %>
