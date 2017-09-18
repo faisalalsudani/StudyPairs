@@ -1,7 +1,5 @@
-<% if student_signed_in? %>
 <ul>
-  <% @students.each do |s| %>
-    <li><%= s.email %></li>
+  <% @students.each do |student| %>
+    <li><%= student.email %> - Admin: <%= student.admin %> </li>
   <% end %>
 </ul>
-<% end %>
