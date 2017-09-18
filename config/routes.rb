@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admins
   root to: 'pages#home'
 
   devise_for :students
+  devise_for :admins
 
   resources :students
+  resources :admins
 end
