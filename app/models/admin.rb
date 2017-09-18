@@ -9,20 +9,23 @@ class Admin < ApplicationRecord
     @students = Student.all
     test_array = []
     test_array = @students.ids
+    
+    total_students = @students.length
 
-    r1 = test_array.sample
-    test_array.delete(r1)
+    puts total_students
+    i = 1
 
-    r2 = test_array.sample
-    test_array.delete(r2)
+      while i <= total_students
+        r1 = test_array.sample
+        test_array.delete(r1)
 
-    puts "The first pairs are #{r1} and #{r2}"
-    puts "*" * 50
+        r2 = test_array.sample
+        test_array.delete(r2)
 
-
-    puts test_array
-
-
-  end
+        puts "The first pairs are #{r1} and #{r2}"
+        puts "*" * 50
+        i+= 2
+      end
+    end
 
 end
