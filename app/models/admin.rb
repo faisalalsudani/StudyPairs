@@ -7,24 +7,23 @@ class Admin < ApplicationRecord
 
   def random_student
     @students = Student.all
-    test_array = []
-    test_array = @students.ids
-    
-    total_students = @students.length
 
-    puts total_students
+    studentes_names = []
+    studentes_names = @students
+    total_students = @students.length
     i = 1
 
       while i <= total_students
-        r1 = test_array.sample
-        test_array.delete(r1)
+        r1 = studentes_names.sample.username
+        r2 = studentes_names.sample.username
 
-        r2 = test_array.sample
-        test_array.delete(r2)
+        if r1 != r2
+          pairs =  r1 + " " + r2
+          pairs.uniq
+        end
 
-        puts "The first pairs are #{r1} and #{r2}"
-        puts "*" * 50
-        i+= 2
+        puts "#" * 40
+        i+= 1
       end
     end
 
