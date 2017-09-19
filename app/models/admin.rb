@@ -22,16 +22,19 @@ class Admin < ApplicationRecord
 
         r2 = test_array.sample
         test_array.delete(r2)
-        pairs[r1]= r2;
+
 
         p1 = @students.select {|s| s["id"] == r1 }
         p2 = @students.select {|s| s["id"] == r2 }
 
-        puts p1.map { |hash| hash['username'] }
-        puts p2.map { |hash| hash['username'] }
+        pairs.push(r1)
+        pairs.push(r2)
+        # puts p1.map { |hash| hash['username'] }
+        # puts p2.map { |hash| hash['username'] }
 
         i+= 2
       end
+      pairs
     end
 
 end
