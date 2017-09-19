@@ -8,8 +8,9 @@ class Admin < ApplicationRecord
   def random_student
     @students = Student.all
     test_array = []
+    pairs = []
     test_array = @students.ids
-    
+
     total_students = @students.length
 
     puts total_students
@@ -21,9 +22,14 @@ class Admin < ApplicationRecord
 
         r2 = test_array.sample
         test_array.delete(r2)
+        pairs[r1]= r2;
 
-        puts "The first pairs are #{r1} and #{r2}"
-        puts "*" * 50
+        p1 = @students.select {|s| s["id"] == r1 }
+        p2 = @students.select {|s| s["id"] == r2 }
+
+        puts p1.map { |hash| hash['username'] }
+        puts p2.map { |hash| hash['username'] }
+
         i+= 2
       end
     end
