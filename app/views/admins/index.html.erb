@@ -1,1 +1,5 @@
-<h2>Welcome admin</h2>
+<h2>Welcome <%= @current_student.username %> </h2>
+
+<h3>The pairs of today</h3>
+
+<%= @current_student.random_student %>
