@@ -3,37 +3,30 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => {email: true, login: false}
+     
+  def random_student
+           @students = Student.all
+           total_students = @students.length
+           test_array = []
+           pairs = []
+           #student_array = Hash.new {|h,k| h[k] = Array.new }
+           test_array = @students.ids
+           i = 1
 
-    def random_student
-      @students = Student.all
-      test_array = []
-      pairs = []
-      test_array = @students.ids
+             while i < total_students
+               r1 = test_array.sample
+                test_array.delete(r1)
+               r2 = test_array.sample
+                test_array.delete(r2)
+                #student_array[r1].push(r2)
 
-      total_students = @students.length
+               pairs.push(Student.find_by(id:r1).username)
+               pairs.push(Student.find_by(id:r2).username)
 
-      puts total_students
-      i = 1
-
-        while i <= total_students
-          r1 = test_array.sample
-          test_array.delete(r1)
-
-          r2 = test_array.sample
-          test_array.delete(r2)
-
-
-          p1 = @students.select {|s| s["id"] == r1 }
-          p2 = @students.select {|s| s["id"] == r2 }
-
-          pairs.push(r1)
-          pairs.push(r2)
-          # puts p1.map { |hash| hash['username'] }
-          # puts p2.map { |hash| hash['username'] }
-
-          i+= 2
-        end
-      pairs
-
+               i+= 2
+             end
+             #puts student_array
+               pairs
+       end
     end
 end
