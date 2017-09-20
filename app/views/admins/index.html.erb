@@ -1,4 +1,7 @@
 <h2>Welcome admin</h2>
 
 
-<%= @current_student.random_student %>
+<% @current_student.random_student.each do |pair| %>
+   <p> <%= pair %>
+     <hr>
+     <%end%>
