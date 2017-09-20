@@ -3,7 +3,7 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => {email: true, login: false}
-     
+
   def random_student
            @students = Student.all
            total_students = @students.length
@@ -28,5 +28,4 @@ class Student < ApplicationRecord
              #puts student_array
                pairs
        end
-    end
 end
