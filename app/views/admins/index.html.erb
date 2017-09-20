@@ -1,6 +1,7 @@
 <h2>Welcome <%= @current_student.username %></h2>
-<p><span style="font-weight:600;">Today date:</span> <%= Time.zone.today %></p>
 
 
-<h2>Pairs of today</h2>
-<% @current_student.r_student %>
+<% @current_student.r_student.each do |pair| %>
+  <p><%= pair %></p>
+  <hr>
+<% end %>

@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :students
-  resources :admins
+
+  resources :admins do
+    resources :pairs
+  end
+
 end
