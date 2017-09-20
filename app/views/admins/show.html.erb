@@ -1,5 +1,16 @@
-<ul>
-  <% @students.each do |student| %>
-    <li><%= student.email %> - Admin: <%= student.admin %> </li>
-  <% end %>
-</ul>
+<div class="row">
+  <h2>List of all student</h2>
+  <hr>
+<% @students.each do |student| %>
+  <div class="col-md-4">
+    <p id="<%= student.id %>"><%= student.email %></p>
+  </div>
+  <div class="col-md-8" style="margin-bottom:20px;">
+    <% if student.admin %>
+    <%= link_to "Demote", student_path(student.id, admin: false), method: :patch, class: "btn btn-danger" %>
+    <% else %>
+    <%= link_to "Promote", student_path(student.id, admin: true), method: :patch, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>
+</div>
