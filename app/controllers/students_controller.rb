@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id, :username])
+    @student = Student.find(params[:id, :username]).where.not(admin: true)
   end
 
   def update
@@ -15,8 +15,7 @@ class StudentsController < ApplicationController
       @student.admin = true
       @student.save
       redirect_to admin_path, notice:"Student is admin!"
-    else
-      @student.admin == true
+    else @student.admin == true
       @student.admin = false
       @student.save
       redirect_to admin_path, notice:"Admin is student!"

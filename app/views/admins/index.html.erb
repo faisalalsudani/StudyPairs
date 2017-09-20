@@ -1,4 +1,6 @@
-<h2>Welcome admin</h2>
+<h2>Welcome <%= @current_student.username %></h2>
+<p><span style="font-weight:600;">Today date:</span> <%= Time.zone.today %></p>
 
 
-<%= @current_student.random_student %>
+<h2>Pairs of today</h2>
+<% @current_student.r_student %>
