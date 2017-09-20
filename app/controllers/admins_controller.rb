@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   before_action :verify_is_admin
 
   def index
-    
+
   end
 
   def show
