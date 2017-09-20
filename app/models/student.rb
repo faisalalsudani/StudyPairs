@@ -4,6 +4,13 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => {email: true, login: false}
 
+
+   has_many :pairs
+   validates :pairs, uniqueness: true
+
+
+ $student_array = Hash.new {|h,k| h[k] = Array.new}
+
 def r_student
 
   @students = Student.all.where.not(admin: true)
@@ -20,16 +27,7 @@ def r_student
     end
   end
 
-  # print out the pair
-  pair.length.times do |i|
-    week = pair[i]
-    week.length.times do |x|
-      student = week[x]
-      puts "Pair " + (x+1).to_s + " " + student[0] + " & " + student[1]
-    end
-       puts " " * 20
-  end
-  pair
+   return pair.sample
 
 end
 

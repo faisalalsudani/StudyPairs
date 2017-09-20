@@ -6,6 +6,10 @@ class AdminsController < ApplicationController
 
   end
 
+  def new
+
+  end
+
   def show
     @students = Student.all
   end
