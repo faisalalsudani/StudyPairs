@@ -10,22 +10,25 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
+
     if @student.admin == false
-       @student.admin == true
-       @student.save
-       redirect_to admin_path, notice:"Student is admin!"
+      @student.admin = true
+      @student.save
+      redirect_to admin_path, notice:"Student is admin!"
     else
-        @student.admin = true
-        @student.save
-        redirect_to admin_path, notice:"Admin is student!"
+      @student.admin == true
+      @student.admin = false
+      @student.save
+      redirect_to admin_path, notice:"Admin is student!"
     end
+
   end
 
 
   private
 
   def student_params
-  params.require(:student).permit(:email, :username)
+  params.require(:student).permit(:email, :username, :admin)
   end
 
 end
