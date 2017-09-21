@@ -3,7 +3,7 @@
   <hr>
 <% @students.each do |student| %>
   <div class="col-md-4">
-    <p id="<%= student.id %>"><%= student.email %></p>
+    <p id="<%= student.id %>"><%= student.username %></p>
   </div>
   <div class="col-md-8" style="margin-bottom:20px;">
     <% if student.admin %>

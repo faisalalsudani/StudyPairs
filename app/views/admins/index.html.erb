@@ -1,6 +1,13 @@
 <h2>Welcome <%= @current_student.username %></h2>
-
-
+<% day = Date.today %>
+<% if day == Date.today %>
+         <h3>
+           <span class="label label-info"><%= day %></span>
+         </h3>
+       <% else %>
+         <h3><%= day %></h3>
+         <% end %>
+       </div>
 <% @current_student.r_student.each do |pair| %>
   <p><%= pair %></p>
   <hr>
