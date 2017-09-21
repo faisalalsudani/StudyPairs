@@ -5,3 +5,9 @@
 <%= render "form" %>
 <hr>
 <h3>All pairs</h3>
+
+<% @pairs.all.each do |pair| %>
+<%= pair.day %> :
+<%= pair.matches %>
+<hr>
+<% end %>
