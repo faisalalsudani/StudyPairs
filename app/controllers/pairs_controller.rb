@@ -8,7 +8,7 @@ class PairsController < ApplicationController
     @pair = Pair.create(pair_params)
     @pair.matches = Pair.r_student
     if @pair.save
-      redirect_to @pair, notice: "Pairs created"
+      redirect_to admins_path, notice: "Pairs created"
     end
   end
 
