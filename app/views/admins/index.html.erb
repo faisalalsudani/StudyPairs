@@ -7,7 +7,8 @@
 <h3>All pairs</h3>
 
 <% @pairs.all.each do |pair| %>
-<%= pair.day %> :
-<%= pair.matches %>
+  <%= pair.day %> :
+  <%= pair.matches %>
+  <%= link_to "[Delete]", pairs_path(@pairs.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <hr>
 <% end %>
