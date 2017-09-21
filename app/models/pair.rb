@@ -3,12 +3,13 @@ class Pair < ApplicationRecord
   validates :day, uniqueness: true
 
   $student_array = Hash.new {|h,k| h[k] = Array.new}
+  $test_iteration = []
 
   def self.r_student
 
     @students = Student.all.where.not(admin: true)
     student_names = []
-    test_iteration = []
+
 
     @students.each do |student|
       student_names.push(student.username)
@@ -21,9 +22,24 @@ class Pair < ApplicationRecord
       end
     end
 
+    if $test_iteration.length == (@students.length - 1)
+      puts $test_iteration
+      $test_iteration.clear
+    end
 
-      test_iteration = pair
-      test_iteration
+    while true
+      @x = pair.sample
+      if $test_iteration.include?(@x)
+        next
+      else
+        $test_iteration.push(@x)
+        break
+      end
+    end
+
+    @x
+
+
 
   end
 end

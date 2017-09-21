@@ -16,6 +16,12 @@ class PairsController < ApplicationController
       @pair = Pair.find(params[:id])
   end
 
+  def destroy_pair
+    @pair = Pair.find(params[:id])
+    @pair.destroy
+
+    redirect_to admins_path
+  end
 
   private
 

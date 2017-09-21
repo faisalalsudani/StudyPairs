@@ -5,10 +5,18 @@
 <%= render "form" %>
 <hr>
 <h3>All pairs</h3>
-
 <% @pairs.all.each do |pair| %>
-  <%= pair.day %> :
+<div class="row pairs" style="margin-bottom:20px;">
+  <div class="col-md-4">
+    <p> <span style="font-weight:800;">Date :</span> <%= pair.day %> </p>
+  </div>
+
+  <div class="col-md-4">
   <%= pair.matches %>
-  <%= link_to "[Delete]", pairs_path(@pairs.id), method: :delete, data: { confirm: "Are you sure?" } %>
-<hr>
+  </div>
+
+  <div class="col-md-4">
+  DELETE
+ </div>
+</div>
 <% end %>
