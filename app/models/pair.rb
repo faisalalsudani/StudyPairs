@@ -22,7 +22,8 @@ class Pair < ApplicationRecord
     end
 
 
-      pair.sample
+      test_iteration = pair
+      test_iteration
 
   end
 end
