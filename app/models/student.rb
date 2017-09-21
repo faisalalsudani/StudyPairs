@@ -15,6 +15,7 @@ def r_student
 
   @students = Student.all.where.not(admin: true)
   student_names = []
+  test_iteration = []
 
   @students.each do |student|
     student_names.push(student.username)
@@ -27,7 +28,9 @@ def r_student
     end
   end
 
-    pair.sample
+  pair
+
+    
 
 end
 
