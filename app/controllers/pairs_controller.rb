@@ -6,8 +6,9 @@ class PairsController < ApplicationController
 
   def create
     @pair = Pair.create(pair_params)
+    @pair.matches = Pair.r_student
     if @pair.save
-      redirect_to admins_path, notice: "Pairs created"
+      redirect_to @pair, notice: "Pairs created"
     end
   end
 
@@ -19,7 +20,7 @@ class PairsController < ApplicationController
   private
 
   def pair_params
-     params.require(:pair).permit(:day,:pairs)
+     params.require(:pair).permit(:day,:pairs, :matches)
   end
 
 
