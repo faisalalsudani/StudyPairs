@@ -14,6 +14,8 @@ class AdminsController < ApplicationController
     @students = Student.all
   end
 
+
+
   private
 
   def verify_is_admin
