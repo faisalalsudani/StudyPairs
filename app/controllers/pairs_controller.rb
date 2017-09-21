@@ -5,12 +5,14 @@ class PairsController < ApplicationController
   end
 
   def create
-    @pair = Pair.new(pair_params)
+    @pair = Pair.create(pair_params)
     if @pair.save
-      redirect_to @admin, notice: "Pairs created"
-    else
-      render :new
+      redirect_to admins_path, notice: "Pairs created"
     end
+  end
+
+  def show
+      @pair = Pair.find(params[:id])
   end
 
 

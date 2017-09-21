@@ -5,8 +5,8 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => {email: true, login: false}
 
 
-   has_many :pairs
-   validates :pairs, uniqueness: true
+  #  has_many :pairs
+  #  validates :pairs, uniqueness: true
 
 
  $student_array = Hash.new {|h,k| h[k] = Array.new}
@@ -27,7 +27,7 @@ def r_student
     end
   end
 
-   return pair.sample
+    pair.sample
 
 end
 

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :students
 
-  resources :admins do
-    resources :pairs
-  end
+  resources :admins
+  resources :pairs
+
 
 end

@@ -1,0 +1,42 @@
+
+
+<%= form_for Pair.new  do |f| %>
+
+  <div class="form-group">
+    <label>Date of today!</label>
+    <%= f.date_select :day, class: "form-control" %>
+    <!-- <label>Select pairs :</label> -->
+
+
+
+     <%= f.select :pairs, options_for_select(@current_student.r_student.to_a) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+
+ <!-- <%= form_for Pair.new do |f| %>
+
+
+      <div class="row text-center">
+
+        <div class="form-group">
+            <label>Select day</label>
+            <%= f.date_select :day %>
+            <label>Select pairs :</label>
+
+            <%= f.select :pairs, options_for_select(@current_student.r_student) %>
+
+        </div>
+
+        <div class="actions">
+         <%= f.submit "Submit", class: "btn btn-success" %>
+        </div>
+
+        <% end %>
+
+</div> -->
