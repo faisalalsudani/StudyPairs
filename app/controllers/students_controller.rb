@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all.where.not(admin: true)
+    @pairs = Pair.all
   end
 
   def show
