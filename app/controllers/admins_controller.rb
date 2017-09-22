@@ -7,10 +7,6 @@ class AdminsController < ApplicationController
     @pairs = Pair.all.order(created_at: :asc)
   end
 
-  def new
-
-  end
-
   def show
     @students = Student.all
   end
