@@ -1,17 +1,16 @@
 <div class="container">
+
   <h2 class="welcom-admin">Welcome <%= current_student.username %>
   <% if current_student.admin? %>
   <span>ADMIN</span>
   <% end %>
   </h2>
   <hr>
-
+  <div class="row">
+  <div class="col-lg-6 offset-lg-1">
   <%= render "form" %>
-  <% if Pair.new.errors.any? %>
-    <% Pair.new.errors.full_messages.each do |m| %>
-      <p><%= m %></p>
-    <% end %>
-  <% end %>
+  </div>
+  </div>
   <hr>
   <h3>All pairs</h3>
   <div class="row">
