@@ -12,7 +12,7 @@ describe "Admin can see overview of all pairs and auto generate pairs" do
 
     expect(page).to have_text("Choose the desired date")
     expect(page).to have_text("All pairs")
-    expect(page).to have_text("Today")
+
  end
 
 

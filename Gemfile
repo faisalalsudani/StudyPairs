@@ -47,6 +47,9 @@ group :development, :test do
   gem 'factory_girl_rails', '4.7.0'
   gem 'faker', '1.6.6'
 
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper"
+
 end
 
 
@@ -62,6 +65,8 @@ end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+   gem 'database_cleaner'
+   gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
