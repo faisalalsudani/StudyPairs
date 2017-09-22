@@ -31,3 +31,23 @@
     color: #468847;
     text-align: left;
  }
+
+ .btn-primary {
+   background:#b6ecc8;
+   border:none;
+ }
+
+ .btn-primary:hover {
+   background:#73b78a;
+   transition: all 0.4s ease-in-out;
+ }
+
+.pairs-index p:first-child {
+  border-bottom: solid 1px;
+}
+
+.welcom-admin span {
+  color: red;
+    font-size: 7px;
+    position: absolute;
+}
