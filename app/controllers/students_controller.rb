@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id, :username]).where.not(admin: true)
+    @student = Student.find(params[:id])
   end
 
   def update
