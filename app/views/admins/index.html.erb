@@ -18,7 +18,7 @@
   <h4>Today</h4>
   <% @pairs.all.each do |pair| %>
     <% if pair.day == Time.zone.today %>
-    <div class="col-md-2 pairs-index" style="background:#b6ecc8; color:white; padding-top:5px; margin-bottom:5px;">
+    <div class="col-md-2 pairs-index" style="background:#73b78a; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
       <% pair.matches.each do |p|  %>
           <p> <%= p.to_s.gsub(/[@\[\]"]/, "") %> </p>
