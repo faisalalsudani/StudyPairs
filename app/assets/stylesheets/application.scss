@@ -46,10 +46,16 @@
   border-bottom: solid 1px;
 }
 
+.welcom-admin {
+  text-align: center;
+}
 .welcom-admin span {
   color: red;
     font-size: 7px;
     position: absolute;
+    transform: rotate(90deg);
+    margin-top: 13px;
+    margin-left: -6px;
 }
 
 .log-in {
@@ -67,11 +73,26 @@
   font-family: -webkit-body;
   text-transform: uppercase;
   font-size: 42px;
-  background: lightgray;
   border-radius: 4px;
   padding: 82px;
 }
 
 .today-match-heading h2 {
+  text-align: center;
+}
+
+.index-img {
+background-image: url(https://i.imgur.com/RBlQjfd.jpg);
+min-height: 286px;
+background-size: cover;
+background-position: top;
+}
+
+.generate-pairs {
+  width: 500px;
+  margin:0 auto;
+}
+
+#new_pair {
   text-align: center;
 }

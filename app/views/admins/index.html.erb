@@ -7,7 +7,7 @@
   </h2>
   <hr>
   <div class="row">
-  <div class="col-lg-6 offset-lg-1">
+  <div class="generate-pairs">
   <%= render "form" %>
   </div>
   </div>
@@ -17,37 +17,39 @@
   <div class="row">
   <% @pairs.all.each do |pair| %>
     <% if pair.day == Time.zone.today %>
-      <h4>Today</h4>
+    <h4>Today</h4>
     <div class="col-md-2 pairs-index" style="background:#73b78a; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
       <% pair.matches.each do |p|  %>
           <p> <%= p.to_s.gsub(/[@\[\]"]/, "") %> </p>
       <% end %>
     </div>
-    <% end %>
-  <% end %>
-  </div>
-
-
-  <div class="row">
-  <% @pairs.all.each do |pair| %>
-    <% if pair.day > Time.zone.today %>
-      <h4>Next days</h4>
-    <div class="col-md-2 pairs-index" style="background:#b5d8ec; color:white; padding-top:5px; margin-bottom:5px;">
-      <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
-      <% pair.matches.each do |p|  %>
-          <p> <%= p.to_s.gsub(/[@\[\]"]/, "") %> </p>
-      <% end %>
+    <div class="col-md-10 index-img">
 
     </div>
     <% end %>
   <% end %>
   </div>
 
+
   <div class="row">
+  <h4>Next days</h4>
+  <% @pairs.all.each do |pair| %>
+    <% if pair.day > Time.zone.today %>
+    <div class="col-md-2 pairs-index" style="background:#b5d8ec; color:white; padding-top:5px; margin-bottom:5px;">
+      <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
+      <% pair.matches.each do |p|  %>
+          <p> <%= p.to_s.gsub(/[@\[\]"]/, "") %> </p>
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="row">
+  <h4>Past days</h4>
   <% @pairs.all.each do |pair| %>
     <% if pair.day < Time.zone.today %>
-      <h4>Past days</h4>
     <div class="col-md-2 pairs-index" style="background:#eb9588; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
   <% pair.matches.each do |p|  %>

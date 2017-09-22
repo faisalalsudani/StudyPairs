@@ -1,5 +1,8 @@
 class StudentsController < ApplicationController
 
+  def home
+  end
+  
   def index
     @students = Student.all.where.not(admin: true)
     @pairs = Pair.all

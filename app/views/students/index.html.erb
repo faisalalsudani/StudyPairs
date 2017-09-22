@@ -5,23 +5,29 @@
   <hr>
   <div class="row">
     <div class="col-md-8 today-match">
-      <h3>Your match for today</h3>
-      <% if @pairs.all.length > 0 %>
-      <% @pairs.all.each do |pair| %>
-        <% if pair.day == Time.zone.today %>
-            <% i=0 %>
-            <% while i < pair.matches.length %>
-              <% if pair.matches[i].include?(current_student.username) %>
-                <p><%= pair.matches[i].to_s.gsub(/[@\[\]"]/, "") %></p>
-              <% end %>
-              <% i+=1 %>
-            <% end %>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your match for today</h3>
+        </div>
+        <div class="panel-body">
+          <% if @pairs.all.length > 0 %>
+          <% @pairs.all.each do |pair| %>
+            <% if pair.day == Time.zone.today %>
+                <% i=0 %>
+                <% while i < pair.matches.length %>
+                  <% if pair.matches[i].include?(current_student.username) %>
+                    <p><%= pair.matches[i].to_s.gsub(/[@\[\]"]/, "") %></p>
+                  <% end %>
+                  <% i+=1 %>
+                <% end %>
 
-        <% end %>
-      <% end %>
-      <% else %>
-      <p>There is no pair for you today!</p>
-      <% end %>
+            <% end %>
+          <% end %>
+          <% else %>
+          <p>There is no pair for you today!</p>
+          <% end %>
+        </div>
+    </div>
     </div>
     <div class="col-md-4" >
       <div class="panel panel-danger">
@@ -53,6 +59,4 @@
 
     </div>
   </div>
-  <hr>
-
 </div>
