@@ -13,16 +13,16 @@
   </div>
   <hr>
   <h3>All pairs</h3>
+  <% if @pairs.all.length > 0 %>
   <div class="row">
-  <h4>Today</h4>
   <% @pairs.all.each do |pair| %>
     <% if pair.day == Time.zone.today %>
+      <h4>Today</h4>
     <div class="col-md-2 pairs-index" style="background:#73b78a; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
       <% pair.matches.each do |p|  %>
           <p> <%= p.to_s.gsub(/[@\[\]"]/, "") %> </p>
       <% end %>
-
     </div>
     <% end %>
   <% end %>
@@ -30,9 +30,9 @@
 
 
   <div class="row">
-  <h4>Next days</h4>
   <% @pairs.all.each do |pair| %>
     <% if pair.day > Time.zone.today %>
+      <h4>Next days</h4>
     <div class="col-md-2 pairs-index" style="background:#b5d8ec; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
       <% pair.matches.each do |p|  %>
@@ -45,9 +45,9 @@
   </div>
 
   <div class="row">
-  <h4>Past days</h4>
   <% @pairs.all.each do |pair| %>
     <% if pair.day < Time.zone.today %>
+      <h4>Past days</h4>
     <div class="col-md-2 pairs-index" style="background:#eb9588; color:white; padding-top:5px; margin-bottom:5px;">
       <p style="padding-top:10px;"> <span style="font-weight:800;">Date :</span> <%= pair.day.strftime("%m/%d/%Y") %> </p>
   <% pair.matches.each do |p|  %>
@@ -58,5 +58,8 @@
     <% end %>
   <% end %>
   </div>
+  <% else %>
+  <p>There are no pairs for today</p>
+  <% end %>
 
 </div>
