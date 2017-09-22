@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <% admin = Student.all.where.not(admin: false) %>
 
-          <p id="<%= student.id %>"><%= student.username %></p>
+          <p id="<%= student.id %>"><span class="glyphicon glyphicon-user" style="font-size:12px; color:#d9534f;"></span> <%= student.username %></p>
         </div>
         <div class="col-md-4" style="margin-bottom:20px;">
 
@@ -18,7 +18,7 @@
             <% if admin.length == 1 %>
           <%= link_to "Demote", student_path(student.id, admin: false), method: :patch, class: "btn btn-danger disabled" %>
             <% else %>
-          <%= link_to "Demote", student_path(student.id, admin: false), method: :patch, class: "btn btn-danger " %>
+          <%= link_to "Demote", student_path(student.id, admin: false), method: :patch, class: "btn btn-danger" %>
             <% end %>
           <% else %>
           <%= link_to "Promote", student_path(student.id, admin: true), method: :patch, class: "btn btn-primary" %>
@@ -33,7 +33,7 @@
     <% if student.admin == false %>
       <div class="row">
         <div class="col-md-8">
-          <p id="<%= student.id %>"><%= student.username %></p>
+          <p id="<%= student.id %>"><span class="glyphicon glyphicon-user" style="font-size:12px; color:#73b78a;"></span> <%= student.username %></p>
         </div>
         <div class="col-md-4" style="margin-bottom:20px;">
           <% if student.admin %>

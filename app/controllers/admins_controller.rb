@@ -16,7 +16,6 @@ class AdminsController < ApplicationController
   private
 
   def verify_is_admin
-
     (current_student.nil?) ? redirect_to(students_path) : (redirect_to(students_path) unless current_student.admin?)
   end
 

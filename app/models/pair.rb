@@ -1,6 +1,5 @@
 class Pair < ApplicationRecord
-  # validates :matches, uniqueness: true
-  validates :day, uniqueness: { :message => "There is already pairs for this day!"}
+  validates :day, uniqueness: true
 
 
   $test_iteration = []

@@ -10,6 +10,8 @@ class PairsController < ApplicationController
     @pair.matches = Pair.r_student
     if @pair.save
       redirect_to admins_path, notice: "Pairs created"
+    else
+      redirect_to admins_path, alert: "There is already pairs for this day"
     end
   end
 
