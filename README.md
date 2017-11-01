@@ -19,7 +19,6 @@ Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bu
 ## Build with
 * Ruby on rails
 * HTML & CSS
-* jQuery
 
 ## Description
 * Admin will generate the pairs/team for a specific day
